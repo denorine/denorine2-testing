@@ -10,7 +10,6 @@ module.exports = {
         const collector = message.channel.createMessageCollector(filter, { time: 60000 });
         
         collector.on('collect', m => {
-            console.log(m.content)
             if (!sessionActivate){
                 if (attempts <= 3) {
                     

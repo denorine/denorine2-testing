@@ -1,5 +1,9 @@
 # First setup
 This branch of the bot is meant for single servers, the multiple server branch will come out later
+
+### The basics
+First things first, make sure you have node.js 12 or later installed, and then run `npm install` to install the npm dependencies, once thats done you may continue below
+
 ### Config File
 The config file is a releatively simple json file with only 2 properties, it contains information for the bots token and the prefix
 ```json
@@ -9,6 +13,7 @@ The config file is a releatively simple json file with only 2 properties, it con
 }
 ```
 Replace Prefix with a prefix (such as a!) and token with your bots token and place in the bots root directory (outside of src)
+
 ### Permissions
 This is a little bit harder to setup but it still should be pretty easy so dont be scared!
 There are 3 basic levels of permissions, Deployer, Admin, and Mod

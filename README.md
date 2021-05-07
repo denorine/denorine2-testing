@@ -25,4 +25,4 @@ anything in execute will be executed on bot ready, simply place the hook file in
 
 # More Docs coming soon, please wait
 
-Check out (The first setup guide here)[https://github.com/denorine/denorine2-testing/blob/master/docs/First-Setup.md]
+Check out [The first setup guide here](https://github.com/denorine/denorine2-testing/blob/master/docs/First-Setup.md)

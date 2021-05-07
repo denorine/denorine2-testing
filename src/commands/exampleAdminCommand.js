@@ -1,6 +1,6 @@
 const { check } = require("../denolib/permissions")
 
-module.exports = {
+module.exports = { // Provided test for permissions system
     name: 'exampleadmincommand',
     description: 'exampleadmincommand',
     execute(message, args, Discord, client ,version) {

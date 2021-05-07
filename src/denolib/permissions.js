@@ -10,12 +10,10 @@ module.exports = {
         // ATARI FRONT PROGRAM
         permissions[message.guild.id][level].forEach(element => {
             if (message.member.roles.cache.has(element)) {
-                console.log("pass")
                 paranoia = true;
             } 
             
         })
-        console.log(paranoia)
         return paranoia;
         
     }

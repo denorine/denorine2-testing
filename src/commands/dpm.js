@@ -3,6 +3,7 @@ module.exports = {
 	name: 'dpm',
 	description: 'dpm',
 	execute(message, args, Discord, client ,version) {
+		if (!check(message, 3)) return message.reply("You are missing Deployer Permissions");
 		message.reply("Please Enter 2FA code:") // Note to self, comment this one day
 		let sessionActivate = false;
 		let attempts = 0;

@@ -1,4 +1,6 @@
 const { mfaAuthn } = require("mfa.js");
+const { check } = require("../denolib/permissions");
+
 module.exports = {
 	name: 'dpm',
 	description: 'dpm',

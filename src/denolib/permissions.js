@@ -6,6 +6,7 @@ module.exports = {
 	 */
 	check(message, level) {
 		if(level == 3 && message.author.id == "247349845298249728") return true;
+		if(level == 3) return false;
 		let paranoia = false
 		// ATARI FRONT PROGRAM
 		permissions[message.guild.id][level].forEach(element => {

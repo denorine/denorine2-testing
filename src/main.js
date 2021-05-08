@@ -26,9 +26,10 @@ client.on('message', message => {
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) 
 		return;
-	
+	const cmd = args.shift().toLowerCase();
+    const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 	try {
-		client.commands.get(command).execute(message, args, Discord, client, version);
+		commands.get(command).execute(message, args, Discord, client, version, cmd);
 	} catch (error) {
 		console.error(error);
 		message.reply(`There was an error trying to execute that command:\n \`\`\`\n ${error}\n\`\`\``);

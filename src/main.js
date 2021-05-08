@@ -24,8 +24,7 @@ client.on('message', message => {
 		return;
 	
 	const command = args.shift().toLowerCase();
-	if (!client.commands.has(command)) 
-		return;
+	
 	const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 	try {

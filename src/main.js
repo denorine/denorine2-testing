@@ -23,12 +23,11 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) 
 		return;
 	
-	const command = args.shift().toLowerCase();
-	
 	const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 	try {
-		commands.get(command).execute(message, args, Discord, client, version, cmd);
+		command.execute(message, args, Discord, client, version, cmd);
+		
 	} catch (error) {
 		console.error(error);
 		message.reply(`There was an error trying to execute that command:\n \`\`\`\n ${error}\n\`\`\``);

@@ -49,6 +49,14 @@ module.exports = {
 					.setDescription(`Installing Package ${json.Name}`)
 					.setFooter(json.Description);
 				message.channel.send(installMessage);
+				npm.load(function(err) {
+					npm.commands.install(json["npm-dependencies"], function(er) {
+					  console.log(er)
+					});
+				});
+				json["dpm-dependencies"].forEach(p=>{ //install dpm-depends
+					update(p) // actually do the hard work
+				}) 
 				json.files.forEach(e => {
 					fetch(`https://raw.githubusercontent.com/denorine/packages/main/${args[1]}/${e}`)
 						.then(res => res.text())

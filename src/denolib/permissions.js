@@ -1,7 +1,7 @@
-const permissions = require("../../permissions.json")
+const permissions = require("permissions.json") //use module-alias
 const Discord = require("discord.js")
 module.exports = {
-	/**
+	/** JS Doc for Intellisense
 	 * @param {Discord.Message} message
 	 */
 	check(message, level) {
@@ -12,7 +12,6 @@ module.exports = {
 			if (message.member.roles.cache.has(element)) {
 				paranoia = true;
 			} 
-			
 		})
 		return paranoia;
 		

@@ -1,4 +1,4 @@
-const permissions = require("permissions.json") //use module-alias
+const permissions = require("../../permissions.json") //if it aint broke dont fix it
 const Discord = require("discord.js")
 module.exports = {
 	/** JS Doc for Intellisense

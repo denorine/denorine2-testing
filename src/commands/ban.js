@@ -4,7 +4,7 @@ module.exports = {
 	name: 'ban',
 	description: 'real ban',
 	execute(message, args, Discord) {
-		if (check(message, 1)) return message.channel.send('You do not have permission to run this command');
+		if (!check(message, 1)) return message.channel.send('You do not have permission to run this command');
 		message.delete();
 		const taggedUser = message.mentions.users.first();
 		const member = message.guild.member(taggedUser);

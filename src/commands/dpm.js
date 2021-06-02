@@ -1,4 +1,5 @@
 const { mfaAuthn } = require("mfa.js");
+const { reloadCommands } = require("../denolib/hotstart");
 const { check } = require("../denolib/permissions");
 
 module.exports = {
@@ -54,8 +55,8 @@ module.exports = {
 					  console.log(er)
 					});
 				});
-				json["dpm-dependencies"].forEach(p=>{ //install dpm-depends
-					update(p) // actually do the hard work
+				json["dpm-dependencies"].forEach(dep=>{ //install dpm-depends
+					//update(dep) // actually do the hard work
 				}) 
 				json.files.forEach(e => {
 					fetch(`https://raw.githubusercontent.com/denorine/packages/main/${args[1]}/${e}`)
@@ -64,10 +65,10 @@ module.exports = {
 							fs.writeFileSync(`./${e}`, js, function(err, result) {
 								if(err) console.log('error', err);
 							  });
-			
-							//client.commands.get("hotstart").execute(message, args, Discord, client, version);
+							  reloadCommands(client);
 						}) 
 				})
+				
 				message.reply("Finished Installing")
 			})
 			}

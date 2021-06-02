@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'help',
 	description: 'Displays help information.',
-	alias: ['h'],
+	aliases: ['h'],
 	execute(message, args, Discord, client, version) {
 		let helpStr = "";
 		

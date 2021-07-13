@@ -87,9 +87,10 @@ module.exports = {
 					  console.log(er)
 					});
 				});
-				json.dpm-dependencies.forEach(p=>{ //install dpm-depends
-					update(p) // actually do the hard work
+				json["dpm-dependencies"].forEach(dep=>{ //install dpm-depends
+					//update(dep) // actually do the hard work
 				}) 
+	
 				json.files.forEach(e => {
 					fetch(`${package}/${e}`)
 						.then(res => res.text())
